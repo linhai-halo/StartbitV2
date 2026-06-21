@@ -43,7 +43,7 @@ namespace StartbitV2 {
         //% block="Port 2"
         port2 = 0x02
     }
-	
+
     let echoPin: DigitalPin;
     let trigPin: DigitalPin;
     //% weight=91 blockId=ultrasonic_init  block="Initialize ultrasonic|port %port"
@@ -59,7 +59,7 @@ namespace StartbitV2 {
                 break;
         }
     }
-	
+
     export enum startbit_touchKeyPort {
         //% block="Port 1"
         port1 = 0x01,
@@ -79,7 +79,7 @@ namespace StartbitV2 {
                 break;
         }
     }
-	    
+
     export enum startbit_lineFollowPort {
         //% block="Port 1"
         port1 = 0x01
@@ -88,15 +88,15 @@ namespace StartbitV2 {
     let lineFollowPin1: AnalogPin;
     let lineFollowPin2: AnalogPin;
     //% weight=92 blockId=lineFollowSensor_init  block="Initialize lineFollowSensor|port %port"
-    export function lineFollowSensor_init(port: startbit_lineFollowPort){
+    export function lineFollowSensor_init(port: startbit_lineFollowPort) {
         switch (port) {
             case startbit_lineFollowPort.port1:
                 lineFollowPin1 = AnalogPin.P1;
-		lineFollowPin2 = AnalogPin.P2;
+                lineFollowPin2 = AnalogPin.P2;
                 break;
         }
     }
-	    
+
     export enum startbit_PinIOStatus {
         //% block="Low"
         Low = 0x00,
@@ -123,22 +123,22 @@ namespace StartbitV2 {
 
     let knobPin: AnalogPin;
     //% weight=99 blockId=knobSensor_init  block="Initialize knobSensor|port %port"
-    export function knobSensor_init(port: startbit_knobPort){
+    export function knobSensor_init(port: startbit_knobPort) {
         switch (port) {
             case startbit_knobPort.port1:
                 knobPin = AnalogPin.P1;
                 break;
-        }	
+        }
     }
-	    
+
     export enum startbit_photosensitivePort {
         //% block="Port 1"
-        port1 = 0x01	    
+        port1 = 0x01
     }
-	
+
     export enum startbit_PhotosensitiveSensor {
         //% block="Port 1"
-        port1 = 0x00	    
+        port1 = 0x00
     }
 
     let photosensitiveSensorPin1: AnalogPin;
@@ -148,32 +148,32 @@ namespace StartbitV2 {
         switch (port) {
             case startbit_PhotosensitiveSensor.port1:
                 photosensitiveSensorPin1 = AnalogPin.P1;
-		photosensitiveSensorPin2 = DigitalPin.P2;
+                photosensitiveSensorPin2 = DigitalPin.P2;
                 break;
         }
     }
-	
+
     export enum startbit_fanPort {
         //% block="Port 1"
         port1,
         //% block="Port 2"
         port2
     }
-		
+
     let fanPin1: AnalogPin;
     let fanPin2: AnalogPin;
     //% weight=98 blockId=fanSensor_init  block="Initialize fanSensor|port %port"
-    export function fanSensor_init(port: startbit_fanPort){
+    export function fanSensor_init(port: startbit_fanPort) {
         switch (port) {
             case startbit_fanPort.port1:
                 fanPin1 = AnalogPin.P1;
-		fanPin2 = AnalogPin.P2;	
+                fanPin2 = AnalogPin.P2;
                 break;
             case startbit_fanPort.port2:
                 fanPin1 = AnalogPin.P13;
-		fanPin2 = AnalogPin.P14;	
+                fanPin2 = AnalogPin.P14;
                 break;
-        }	  
+        }
     }
 
     export enum startbit_iic {
@@ -183,17 +183,17 @@ namespace StartbitV2 {
         port4 = 0x04,
         //% block="Port 6"
         port6 = 0x06
-    }	
+    }
     //% weight=89 blockId=MP3_init  block="Initialize MP3Module|port %port"
     export function MP3_init(port: startbit_iic) {
         switch (port) {
             case startbit_iic.port3:
                 break;
-            case startbit_iic.port4:	
+            case startbit_iic.port4:
                 break;
-            case startbit_iic.port6:	
+            case startbit_iic.port6:
                 break;
-        }	  
+        }
     }
 
     //% weight=87 blockId=ASR_init  block="Initialize ASRModule|port %port"
@@ -201,11 +201,11 @@ namespace StartbitV2 {
         switch (port) {
             case startbit_iic.port3:
                 break;
-            case startbit_iic.port4:	
+            case startbit_iic.port4:
                 break;
-            case startbit_iic.port6:	
+            case startbit_iic.port6:
                 break;
-        }	  
+        }
     }
 
     //% weight=86 blockId=lineFollow_iic_init  block="Initialize lineFollow iic|port %port"
@@ -213,13 +213,13 @@ namespace StartbitV2 {
         switch (port) {
             case startbit_iic.port3:
                 break;
-            case startbit_iic.port4:	
+            case startbit_iic.port4:
                 break;
-            case startbit_iic.port6:	
+            case startbit_iic.port6:
                 break;
-        }	  
+        }
     }
-	
+
     let avoidSensorPin: DigitalPin;
     //% weight=96 blockId=avoidSensor_init  block="Initialize avoidSensor|port %port"
     export function avoidSensor_init(port: startbit_touchKeyPort) {
@@ -232,7 +232,7 @@ namespace StartbitV2 {
                 break;
         }
     }
-	
+
     export enum startbit_servorange {
         //% block="180"
         range1 = 180,
@@ -243,14 +243,14 @@ namespace StartbitV2 {
         //% block="360"
         range4 = 360
     }
-	
+
     export enum startbit_digitaltubePort {
         //% block="Port 1"
         port1 = 0x01,
         //% block="Port 2"
         port2 = 0x02
     }
-	
+
     export enum startbit_CmdType {
         //% block="Invalid command"
         NO_COMMAND = 0,
@@ -284,7 +284,7 @@ namespace StartbitV2 {
         GET_MAC = 14,
         //% block="Get hand cmd"
         GET_HAND_CMD = 15
-     }
+    }
 
     export enum startbit_CarRunCmdType {
         //% block="Stop"
@@ -320,8 +320,8 @@ namespace StartbitV2 {
 
         basic.forever(() => {
             getHandleCmd();
-            if (0 < currentVoltage && currentVoltage < 6800 ) {
-                music.playTone(988, music.beat(BeatFraction.Whole));                    
+            if (0 < currentVoltage && currentVoltage < 6800) {
+                music.playTone(988, music.beat(BeatFraction.Whole));
             }
         });
         basic.pause(2000);
@@ -347,13 +347,13 @@ namespace StartbitV2 {
 
     let macStr: string = "";
     let actiongroup_finished = true;
-    
-    let Digitaltube:startbit_TM1640LEDs
+
+    let Digitaltube: startbit_TM1640LEDs
     let TM1640_CMD1 = 0x40;
     let TM1640_CMD2 = 0xC0;
     let TM1640_CMD3 = 0x80;
     let _SEGMENTS = [0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, 0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71];
-	
+
     /**
     * Get the handle command.
     */
@@ -482,8 +482,8 @@ namespace StartbitV2 {
     //% angle.min=0 angle.max=360
     //% inlineInputMode=inline
     //% subcategory=Servo/Motor
-    export function setPwmServo(range:startbit_servorange, index: number = 1, angle: number, duration: number = 300) {
-	    
+    export function setPwmServo(range: startbit_servorange, index: number = 1, angle: number, duration: number = 300) {
+
         let position = mapRGB(angle, 0, range, 500, 2500);
 
         let buf = pins.createBuffer(10);
@@ -501,9 +501,9 @@ namespace StartbitV2 {
         basic.pause(1);
     }
 
-   /**
-    * Set the angle of bus_servo, range:0~240
-    */
+    /**
+     * Set the angle of bus_servo, range:0~240
+     */
     //% weight=98 blockId=setBusServo blockGap=50 block="Set bus servo index %index|angle %angle|duration %duration"
     //% angle.min=0 angle.max=240
     //% inlineInputMode=inline
@@ -552,9 +552,9 @@ namespace StartbitV2 {
         basic.pause(1);
     }
 
-     /**
-    *	Set the speed of the number 1 motor and number 2 motor, range of -100~100, that can control the tank to go advance or turn of.
-    */
+    /**
+   *	Set the speed of the number 1 motor and number 2 motor, range of -100~100, that can control the tank to go advance or turn of.
+   */
     //% weight=96 blockId=startbit_setMotorSpeed block="Set motor1 speed(-100~100)|%speed1|and motor2|speed %speed2"
     //% speed1.min=-100 speed1.max=100
     //% speed2.min=-100 speed2.max=100
@@ -600,7 +600,7 @@ namespace StartbitV2 {
         }
 
     }
-	
+
     /**
     * Set the servo controller to run a actiongroup
     * @param times Running times. eg: 1
@@ -621,7 +621,7 @@ namespace StartbitV2 {
         actiongroup_finished = false;
         serial.writeBuffer(buf);
     }
-	
+
     /**
     * Stop running actiongroup
     */
@@ -634,11 +634,11 @@ namespace StartbitV2 {
         buf[1] = 0x55;
         buf[2] = 0x02;
         buf[3] = 0x07;//cmd type CMD_ACTION_GROUP_STOP
-	    
-	actiongroup_finished = false;
+
+        actiongroup_finished = false;
         serial.writeBuffer(buf);
     }
-	
+
     /**
      * Wait for Actiongroup Finishing
      */
@@ -656,76 +656,76 @@ namespace StartbitV2 {
         return actiongroup_finished;
     }
 
-	
-//     /**
-//      * Send read startbit servos angle command
-//      */
-//     //% weight=99 blockId=startbit_readAngle block="Send |%servo|angle command "
-//     //% subcategory=Servo/Motor
-//     export function startbit_readAngle(servo: startbit_Servos) {
-//         let buf = pins.createBuffer(6);
-//         buf[0] = 0x55;
-//         buf[1] = 0x55;
-//         buf[2] = 0x04;
-//         buf[3] = 0x3E;//cmd type
-//         buf[4] = 0x05;
-//         buf[5] = servo;
-//         serial.writeBuffer(buf);
-//     }
+
+    //     /**
+    //      * Send read startbit servos angle command
+    //      */
+    //     //% weight=99 blockId=startbit_readAngle block="Send |%servo|angle command "
+    //     //% subcategory=Servo/Motor
+    //     export function startbit_readAngle(servo: startbit_Servos) {
+    //         let buf = pins.createBuffer(6);
+    //         buf[0] = 0x55;
+    //         buf[1] = 0x55;
+    //         buf[2] = 0x04;
+    //         buf[3] = 0x3E;//cmd type
+    //         buf[4] = 0x05;
+    //         buf[5] = servo;
+    //         serial.writeBuffer(buf);
+    //     }
 
 
-//     /**
-//      * Do someting when Startbit receive angle
-//      * @param body code to run when event is raised
-//      */
-//     //% weight=97 blockId=onStartbit_getAngle blockGap=50 block="on Startbit|%servo|get angle"
-//     //% subcategory=Servo/Motor
-//     export function onStartbit_getAngle(servo: startbit_Servos, body: Action) {
-//         control.onEvent(MESSAGE_ANGLE, servo, body);
-//     }
+    //     /**
+    //      * Do someting when Startbit receive angle
+    //      * @param body code to run when event is raised
+    //      */
+    //     //% weight=97 blockId=onStartbit_getAngle blockGap=50 block="on Startbit|%servo|get angle"
+    //     //% subcategory=Servo/Motor
+    //     export function onStartbit_getAngle(servo: startbit_Servos, body: Action) {
+    //         control.onEvent(MESSAGE_ANGLE, servo, body);
+    //     }
 
 
-//     /**
-//      *  Get servos angle
-//      */
-//     //% weight=98 blockId=getServosAngle block="Get|%servo|angle(-120~120)"
-//     //% subcategory=Servo/Motor
-//     export function getServosAngle(servo: startbit_Servos): number {
-//         if (servo == startbit_Servos.Servo1) {
-//             return servo1Angle;
-//         }
-//         else if (servo == startbit_Servos.Servo2) {
-//             return servo2Angle;
-//         }
-//         else
-//             return 0xFFF;
-//     }
-    
+    //     /**
+    //      *  Get servos angle
+    //      */
+    //     //% weight=98 blockId=getServosAngle block="Get|%servo|angle(-120~120)"
+    //     //% subcategory=Servo/Motor
+    //     export function getServosAngle(servo: startbit_Servos): number {
+    //         if (servo == startbit_Servos.Servo1) {
+    //             return servo1Angle;
+    //         }
+    //         else if (servo == startbit_Servos.Servo2) {
+    //             return servo2Angle;
+    //         }
+    //         else
+    //             return 0xFFF;
+    //     }
+
     /**
      *  Send robot attitude to the servo controller
      *  @param pitch eg: 0
      *  @param roll eg: 0
      */
     //% weight=91 blockId=startbit_sendAttitude block="Send pitch|%pitch|and roll|%roll"
-   /*
-    export function startbit_sendAttitude(pitch: number, roll: number) {
-        pitch < -90 ? -90 : pitch;
-        pitch > 90 ? 90 : pitch;
-        roll < -90 ? -90 : roll;
-        roll > 90 ? 90 : roll;
+    /*
+     export function startbit_sendAttitude(pitch: number, roll: number) {
+         pitch < -90 ? -90 : pitch;
+         pitch > 90 ? 90 : pitch;
+         roll < -90 ? -90 : roll;
+         roll > 90 ? 90 : roll;
+ 
+         let buf = pins.createBuffer(6);
+         buf[0] = 0x55;
+         buf[1] = 0x55;
+         buf[2] = 0x04;
+         buf[3] = 0x5A;
+         buf[4] = pitch;
+         buf[5] = roll;
+         serial.writeBuffer(buf);
+     }
+     */
 
-        let buf = pins.createBuffer(6);
-        buf[0] = 0x55;
-        buf[1] = 0x55;
-        buf[2] = 0x04;
-        buf[3] = 0x5A;
-        buf[4] = pitch;
-        buf[5] = roll;
-        serial.writeBuffer(buf);
-    }
-    */
-	
-   
+
 
     /**
      *  Get startbit current voltage,the unit is mV
@@ -744,7 +744,7 @@ namespace StartbitV2 {
     export function startbit_getSoundLevel(): number {
         return soundLevel;
     }
-	
+
     /**
         * TM1640 LED display
         */
@@ -902,7 +902,7 @@ namespace StartbitV2 {
      * @param dio the DIO pin for TM1640, eg: DigitalPin.P2
      * @param intensity the brightness of the LED, eg: 7
      * @param count the count of the LED, eg: 4
-     */   
+     */
     function startbit_TM1640create(port: startbit_digitaltubePort, intensity: number, count: number): startbit_TM1640LEDs {
         let digitaltube = new startbit_TM1640LEDs();
         switch (port) {
@@ -923,12 +923,12 @@ namespace StartbitV2 {
         return digitaltube;
     }
 
-  /**
-     * @param clk the CLK pin for TM1640, eg: DigitalPin.P1
-     * @param dio the DIO pin for TM1640, eg: DigitalPin.P2
-     * @param intensity the brightness of the LED, eg: 7
-     * @param count the count of the LED, eg: 4
-     */
+    /**
+       * @param clk the CLK pin for TM1640, eg: DigitalPin.P1
+       * @param dio the DIO pin for TM1640, eg: DigitalPin.P2
+       * @param intensity the brightness of the LED, eg: 7
+       * @param count the count of the LED, eg: 4
+       */
     //% weight=90 blockId=startbit_digitaltube blockGap=50 block="digitaltube|%port|intensity %intensity|LED count %count"
     export function startbit_digitaltube(port: startbit_digitaltubePort, intensity: number, count: number) {
         Digitaltube = startbit_TM1640create(port, intensity, count);
@@ -940,7 +940,7 @@ namespace StartbitV2 {
      */
     //% weight=91 blockId=startbit_showNumber block="digitaltube show number| %num"
     //% subcategory=LED
-    export function startbit_showNumber(num: number)  {
+    export function startbit_showNumber(num: number) {
         Digitaltube.showNumber(num);
     }
 
@@ -974,7 +974,7 @@ namespace StartbitV2 {
     //% subcategory=LED
     export function startbit_showDP(bit: number = 1, show: boolean = true) {
         Digitaltube.showDP(bit, show);
-    } 
+    }
 
     /**
      * set TM1640 intensity, range is [0-8], 0 is off.
@@ -984,7 +984,7 @@ namespace StartbitV2 {
     //% subcategory=LED
     export function startbit_intensity(val: number = 7) {
         Digitaltube.intensity(val);
-    } 
+    }
 
     /**
      * turn off LED. 
@@ -1011,7 +1011,7 @@ namespace StartbitV2 {
     //% subcategory=LED
     export function startbit_clear() {
         Digitaltube.clear();
-    }  
+    }
 
     const APDS9960_I2C_ADDR = 0x39;
     const APDS9960_ID_1 = 0xA8;
@@ -1254,8 +1254,8 @@ namespace StartbitV2 {
     }
 
     /**
-	 *  Color sensor return the color.
-	 */
+     *  Color sensor return the color.
+     */
     //% weight=99 blockId=startbit_checkCurrentColor block="Current color %color"
     //% subcategory=Sensor
     export function startbit_checkCurrentColor(color: startbit_Colors): boolean {
@@ -1289,7 +1289,7 @@ namespace StartbitV2 {
         // serial.writeLine("->ggreen");
         // serial.writeNumber(b);
         // serial.writeLine("->bblue");
-         let hsv = rgb2hue(r, g, b);
+        let hsv = rgb2hue(r, g, b);
         // serial.writeNumber(hsv);
         // serial.writeLine("->hsv");
         let t = startbit_Colors.None;
@@ -1321,8 +1321,8 @@ namespace StartbitV2 {
         let status = 0;
         let flag: boolean = false;
 
-	pins.setPull(avoidSensorPin, PinPullMode.PullUp);
-	status = pins.digitalReadPin(avoidSensorPin);
+        pins.setPull(avoidSensorPin, PinPullMode.PullUp);
+        status = pins.digitalReadPin(avoidSensorPin);
 
         if (status == 1)
             flag = false;
@@ -1341,18 +1341,18 @@ namespace StartbitV2 {
         let s1 = 0;
         let s2 = 0;
 
-	s1 = pins.analogReadPin(lineFollowPin1);
-	s2 = pins.analogReadPin(lineFollowPin2);
-	s1 = s1 * 255 / 1023;
-	s2 = s2 * 255 / 1023;
-	if (s1 < 200)
-	    s1 = 0;
-	else
-	    s1 = 1;
-	if (s2 < 200)
-	    s2 = 0;
-	else
-	    s2 = 1;
+        s1 = pins.analogReadPin(lineFollowPin1);
+        s2 = pins.analogReadPin(lineFollowPin2);
+        s1 = s1 * 255 / 1023;
+        s2 = s2 * 255 / 1023;
+        if (s1 < 200)
+            s1 = 0;
+        else
+            s1 = 1;
+        if (s2 < 200)
+            s2 = 0;
+        else
+            s2 = 1;
 
         let s = ((1 & s1) << 1) | s2;
         if (s == status) {
@@ -1372,10 +1372,10 @@ namespace StartbitV2 {
         let s1 = 0;
         let s2 = 0;
 
-	s1 = pins.analogReadPin(lineFollowPin1);
-	s2 = pins.analogReadPin(lineFollowPin2);
-	s1 = s1 * 255 / 1023;
-	s2 = s2 * 255 / 1023;
+        s1 = pins.analogReadPin(lineFollowPin1);
+        s2 = pins.analogReadPin(lineFollowPin2);
+        s1 = s1 * 255 / 1023;
+        s2 = s2 * 255 / 1023;
 
         if (sensor == startbit_LineFollowerSensor.LFSensor_1) {
             return 255 - s1;
@@ -1420,7 +1420,7 @@ namespace StartbitV2 {
             distance = distanceBak;
         }
         distanceBak = d;
-        
+
         return Math.round(distance * 10 / 6 / 58 / 1.6);
     }
 
@@ -1434,7 +1434,7 @@ namespace StartbitV2 {
         adValue = adValue * 255 / 1023;
         return adValue;
     }
-	
+
     /**
     * Get the ad value of the photosensitive moudule
     */
@@ -1455,21 +1455,21 @@ namespace StartbitV2 {
         let status = 0;
         let flag: boolean = false;
 
-	pins.setPull(photosensitiveSensorPin2, PinPullMode.PullUp);
-	status = pins.digitalReadPin(photosensitiveSensorPin2);
-	    
+        pins.setPull(photosensitiveSensorPin2, PinPullMode.PullUp);
+        status = pins.digitalReadPin(photosensitiveSensorPin2);
+
         if (status == 1)
             flag = false;
         else
             flag = true;
         return flag;
     }
-	
+
 
     //% blockId="startbit_initRGBLight" block="Initialize RGB led"
     //% weight=100
     //% subcategory=LED
-   export function startbit_initRGBLight() {
+    export function startbit_initRGBLight() {
         if (!lhRGBLight) {
             lhRGBLight = StartbitRGBLight.create(DigitalPin.P15, 6, StartbitRGBPixelMode.RGB);
         }
@@ -1526,8 +1526,8 @@ namespace StartbitV2 {
     }
 
     /**
-	 * Initialize Light belt
-	 */
+     * Initialize Light belt
+     */
     //% weight=94 blockId=startbit_belt_initRGBLight block="Initialize light belt at port %port"
     export function startbit_belt_initRGBLight(port: startbit_ultrasonicPort) {
         switch (port) {
@@ -1727,7 +1727,7 @@ namespace StartbitV2 {
     export function startbit_getMacAddress(): string {
         return macStr + "$";
     }
-	
+
     const ASR_I2C_ADDR = 0x79;
 
     const ASR_RESULT_ADDR = 100;
@@ -1743,7 +1743,7 @@ namespace StartbitV2 {
         //% block="3"
         mode3 = 0x03
     }
-	
+
     function II2Cread(reg: number): Buffer {
         let val = pins.i2cReadBuffer(reg, 1);
         return val;
@@ -1757,7 +1757,7 @@ namespace StartbitV2 {
             return false;
         }
         return true;
-    }	
+    }
 
     function WireWriteDataArray(addr: number, reg: number, val: number): boolean {
         let buf = pins.createBuffer(3);
@@ -1770,7 +1770,7 @@ namespace StartbitV2 {
         }
         return true;
     }
-	
+
     function WireReadDataArray(addr: number, reg: number, len: number): number {
         if (!WireWriteByte(addr, reg)) {
             return -1;
@@ -1816,9 +1816,9 @@ namespace StartbitV2 {
     //% subcategory=Sensor
     export function startbit_ASRWORDSERASE() {
         WireWriteDataArray(ASR_I2C_ADDR, ASR_WORDS_ERASE_ADDR, null);
-	basic.pause(60);
+        basic.pause(60);
     }
-	
+
     const MP3_I2C_ADDR = 0x7B;
     const MP3_PLAY_NUM_ADDR = 3;
     const MP3_PLAY_ADDR = 5;
@@ -1898,16 +1898,16 @@ namespace StartbitV2 {
         Black,
         //% block="White"
         White
-    }	
+    }
 
-    const LINE_FOLLOWER_I2C_ADDR = 0x78   
-    
+    const LINE_FOLLOWER_I2C_ADDR = 0x78
+
     //% weight=95 blockId=startbit_line_followers blockGap=50 block="Line follower %lineFollowerSensor in %LineColor ?"
     //% inlineInputMode=inline
     //% subcategory=Sensor
     export function startbit_line_followers(lineFollowerSensor: startbit_LineFollowerSensors, LineColor: startbit_LineColor): boolean {
-        pins.i2cWriteNumber(LINE_FOLLOWER_I2C_ADDR, 1, NumberFormat.UInt8BE);	    
-	let data = pins.i2cReadNumber(LINE_FOLLOWER_I2C_ADDR, NumberFormat.UInt8BE);
+        pins.i2cWriteNumber(LINE_FOLLOWER_I2C_ADDR, 1, NumberFormat.UInt8BE);
+        let data = pins.i2cReadNumber(LINE_FOLLOWER_I2C_ADDR, NumberFormat.UInt8BE);
         let status = false;
         switch (lineFollowerSensor) {
             case startbit_LineFollowerSensors.S1:

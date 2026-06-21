@@ -1,5 +1,5 @@
 {
-    "name": "StartbitV2_fix",
+    "name": "StartbitV2",
     "version": "0.1.0",
     "description": "Blocks for Hiwonder StartbitV2, Fix sendBufferAsm",
     "license": "MIT",
@@ -11,7 +11,7 @@
         "README.md",
         "StartbitV2.ts",
         "StartbitRGBLight.ts",
-        "sendbuffer.asm",
+        "sendbuffer_fix.asm",
         "_locales/zh/StartbitV2-strings.json",
         "_locales/zh/StartbitV2-jsdoc-strings.json"
     ],

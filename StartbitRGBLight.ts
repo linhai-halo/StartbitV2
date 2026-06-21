@@ -91,7 +91,7 @@ enum StartbitRGBPixelMode {
  * QbitRGBLight Functions
  */
 namespace StartbitRGBLight {
-    //% shim=sendBufferAsm_fix
+    //% shim=sendBufferFixAsm
     //% parts="QbitRGBLight"
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
 
