@@ -23,7 +23,7 @@ enum StartbitRGBColors {
     White = 9
 }
 
- enum StartbitLights {
+enum StartbitLights {
     //% block="Light 1"
     Light1 = 0x00,
     //% block="Light 2"
@@ -31,48 +31,48 @@ enum StartbitRGBColors {
     //% block="Light 3"
     Light3 = 0x02,
     //% block="Light 4"
-     Light4 = 0x03,
+    Light4 = 0x03,
     //% block="Light 5"
-     Light5 = 0x04,
+    Light5 = 0x04,
     //% block="Light 6"
-     Light6 = 0x05,
+    Light6 = 0x05,
     //% block="All"
-     All = 0x06
+    All = 0x06
 }
 
 enum StartbitLightsBelt {
-        //% block="Light 1"
-        Light1 = 0x00,
-        //% block="Light 2"
-        Light2 = 0x01,
-        //% block="Light 3"
-        Light3 = 0x02,
-        //% block="Light 4"
-         Light4 = 0x03,
-        //% block="Light 5"
-         Light5 = 0x04,
-        //% block="Light 6"
-        Light6 = 0x05,
-        //% block="Light 7"
-        Light7 = 0x06,
-        //% block="Light 8"
-        Light8 = 0x07,
-        //% block="Light 9"
-        Light9 = 0x08,
-        //% block="Light 10"
-        Light10 = 0x09,
-        //% block="Light 11"
-        Light11 = 0x0A,
-        //% block="Light 12"
-        Light12 = 0x0B,
-        //% block="Light 13"
-        Light13 = 0x0C,
-        //% block="Light 14"
-        Light14 = 0x0D,
-        //% block="Light 15"
-        Light15 = 0x0E,
-        //% block="All"
-        All = 0x0F
+    //% block="Light 1"
+    Light1 = 0x00,
+    //% block="Light 2"
+    Light2 = 0x01,
+    //% block="Light 3"
+    Light3 = 0x02,
+    //% block="Light 4"
+    Light4 = 0x03,
+    //% block="Light 5"
+    Light5 = 0x04,
+    //% block="Light 6"
+    Light6 = 0x05,
+    //% block="Light 7"
+    Light7 = 0x06,
+    //% block="Light 8"
+    Light8 = 0x07,
+    //% block="Light 9"
+    Light9 = 0x08,
+    //% block="Light 10"
+    Light10 = 0x09,
+    //% block="Light 11"
+    Light11 = 0x0A,
+    //% block="Light 12"
+    Light12 = 0x0B,
+    //% block="Light 13"
+    Light13 = 0x0C,
+    //% block="Light 14"
+    Light14 = 0x0D,
+    //% block="Light 15"
+    Light15 = 0x0E,
+    //% block="All"
+    All = 0x0F
 }
 
 /**
@@ -91,7 +91,7 @@ enum StartbitRGBPixelMode {
  * QbitRGBLight Functions
  */
 namespace StartbitRGBLight {
-    //% shim=sendBufferAsm
+    //% shim=start_SendBufferAsm
     //% parts="QbitRGBLight"
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
 
@@ -122,33 +122,29 @@ namespace StartbitRGBLight {
         setBeltPixelColor(pixeloffset: number, rgb: StartbitRGBColors): void {
             if (pixeloffset == 15)//全部
             {
-                for (let i = 0; i < this._length; i++)
-                {
-                    this.setPixelRGB(i, rgb);     
+                for (let i = 0; i < this._length; i++) {
+                    this.setPixelRGB(i, rgb);
                 }
             }
-            else
-            {
+            else {
                 this.setPixelRGB(pixeloffset * 3, rgb);
                 this.setPixelRGB(pixeloffset * 3 + 1, rgb);
-                this.setPixelRGB(pixeloffset*3 + 2, rgb);
+                this.setPixelRGB(pixeloffset * 3 + 2, rgb);
             }
-            
+
         }
 
         setPixelColor(pixeloffset: number, rgb: StartbitRGBColors): void {
             if (pixeloffset == this._length)//全部
             {
-                for (let i = 0; i < this._length; i++)
-                {
-                    this.setPixelRGB(i, rgb);     
+                for (let i = 0; i < this._length; i++) {
+                    this.setPixelRGB(i, rgb);
                 }
             }
-            else
-            {
+            else {
                 this.setPixelRGB(pixeloffset, rgb);
             }
-            
+
         }
 
         private setPixelRGB(pixeloffset: number, rgb: StartbitRGBColors): void {
@@ -156,44 +152,43 @@ namespace StartbitRGBLight {
                 || pixeloffset >= this._length)
                 return;
             let tureRgb = 0;
-                switch (rgb)
-                {
-                    case StartbitRGBColors.Red:
-                        tureRgb = 0xFF0000;
-                        break;    
-    
-                    case StartbitRGBColors.Orange:
-                        tureRgb = 0xFFA500;    
-                        break;    
-    
-                    case StartbitRGBColors.Yellow:
-                        tureRgb = 0xFFFF00;
-                        break;    
-                        
-                    case StartbitRGBColors.Green:
-                        tureRgb = 0x00FF00;    
-                        break;    
-    
-                    case StartbitRGBColors.Blue:
-                        tureRgb = 0x0000FF;
-                        break;    
-                        
-                    case StartbitRGBColors.Indigo:
-                        tureRgb = 0x4b0082;    
-                        break;    
-    
-                    case StartbitRGBColors.Violet:
-                        tureRgb = 0x8a2be2;
-                        break;    
-                        
-                    case StartbitRGBColors.Purple:
-                        tureRgb = 0xFF00FF;    
-                        break;   
-    
-                    case StartbitRGBColors.White:
-                        tureRgb = 0xFFFFFF;    
-                        break;   
-                }
+            switch (rgb) {
+                case StartbitRGBColors.Red:
+                    tureRgb = 0xFF0000;
+                    break;
+
+                case StartbitRGBColors.Orange:
+                    tureRgb = 0xFFA500;
+                    break;
+
+                case StartbitRGBColors.Yellow:
+                    tureRgb = 0xFFFF00;
+                    break;
+
+                case StartbitRGBColors.Green:
+                    tureRgb = 0x00FF00;
+                    break;
+
+                case StartbitRGBColors.Blue:
+                    tureRgb = 0x0000FF;
+                    break;
+
+                case StartbitRGBColors.Indigo:
+                    tureRgb = 0x4b0082;
+                    break;
+
+                case StartbitRGBColors.Violet:
+                    tureRgb = 0x8a2be2;
+                    break;
+
+                case StartbitRGBColors.Purple:
+                    tureRgb = 0xFF00FF;
+                    break;
+
+                case StartbitRGBColors.White:
+                    tureRgb = 0xFFFFFF;
+                    break;
+            }
 
             let stride = this._mode === StartbitRGBPixelMode.RGBW ? 4 : 3;
             pixeloffset = (pixeloffset + this.start) * stride;

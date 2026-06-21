@@ -1,4 +1,4 @@
-sendBufferAsm:
+sendBufferAsm_fix:
 
     push {r4,r5,r6,r7,lr}
     
